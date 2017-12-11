@@ -16,6 +16,8 @@ public class Runner
 				building[x][y] = new Room(x,y);
 			}
 		}
+		//Used to reference the current room you are currently in
+		building[0][1] = new LockedRoom(0,1);
 	
 		//create a random winning room.
 		int x = (int)(Math.random()*building.length);
@@ -23,14 +25,44 @@ public class Runner
 		building[x][y] = new Room(x,y);
 		
 		//setup Player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		String[] inventory = new String[10];
+		for (int i = 0; i < inventory.length; i++)
+		{
+			inventory[i] = "";
+		}
+		Person player1 = new Person("FirstName", "FamilyName", 0,0, inventory);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while (gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			if (validMove(move, player1, building))
+			if (building[player1.getx()][player1.gety()] instanceof LockedRoom)
+			{
+				int numKey = 0;
+				for(int i = 0; i < player1.inventory.length; i++)
+				{
+					if (player1.inventory[i].equals("Key"))
+					{
+						numKey++;
+					}
+				}
+				if (numKey > 0)
+				{
+					System.out.println("You tried opening the door with force but it did not budge.");
+					System.out.println("if only I have a key...");
+				}
+				else
+				{
+					System.out.println("You tried opening the door with force but it did not budge.");
+					System.out.println("Having no Key you are stuck in that room for eternity..." +
+									   "\nYou can hear the sound of your stomach growling," +
+									   "\nYou grow hungrier day by day, and then you look at you own arm...");
+					System.out.println("You reached the end of your adventure... Better luck next time!");
+				}
+				gameOff();
+			}
+			else if (validMove(move, player1, building) == true)
 			{
 				System.out.println("Your coordinates: row = " + player1.getx() + " col = " + player1.gety());
 			}
@@ -46,58 +78,58 @@ public class Runner
 	public static boolean validMove(String move, Person p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
-		switch (move)
-		{
-		case "n":
-			if (p.gety() > 0)
+
+			switch (move)
 			{
-				map[p.getx()][p.gety()].leaveRoom(p);
-				map[p.getx() - 1][p.gety()].enterRoom(p);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			case "n":
+				if (p.getx() > 0)
+				{
+					map[p.getx()][p.gety()].leaveRoom(p);
+					map[p.getx() - 1][p.gety()].enterRoom(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			
-		case "e":
-			if (p.gety() < map[p.getx()].length - 1)
-			{
-				map[p.getx()][p.gety()].leaveRoom(p);
-				map[p.getx()][p.gety() + 1].enterRoom(p);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			case "e":
+				if (p.gety() < map[p.getx()].length - 1)
+				{
+					map[p.getx()][p.gety()].leaveRoom(p);
+					map[p.getx()][p.gety() + 1].enterRoom(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			
-		case "s":
-			if (p.getx() < map.length - 1)
-			{
-				map[p.getx()][p.gety()].leaveRoom(p);
-				map[p.getx() + 1][p.gety()].leaveRoom(p);
-				return true;
-			}
-			else
-			{
+			case "s":
+				if (p.getx() < map.length - 1)
+				{
+					map[p.getx()][p.gety()].leaveRoom(p);
+					map[p.getx() + 1][p.gety()].enterRoom(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			case "w":
+				if (p.gety() > 0)
+				{
+					map[p.getx()][p.gety()].leaveRoom(p);
+					map[p.getx()][p.gety() - 1].leaveRoom(p);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			default:
 				return false;
 			}
-		case "w":
-			if (p.gety() > 0)
-			{
-				map[p.getx()][p.gety()].leaveRoom(p);
-				map[p.getx()][p.gety() - 1].leaveRoom(p);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		default:
-			break;
-		}
-		return true;
 	}
 	
 	public static void gameOff()

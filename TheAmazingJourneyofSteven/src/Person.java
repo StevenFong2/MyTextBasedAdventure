@@ -4,7 +4,7 @@ public class Person
 	String firstName;
 	String familyName;
 	int x, y;
-	String[] inventory = new String[10];
+	String[] inventory;
 	
 	public String getfirstName()
 	{
@@ -36,12 +36,13 @@ public class Person
 		return this.y;	
 	}
 	
-	public Person (String firstName, String familyName, int x, int y)
+	public Person (String firstName, String familyName, int x, int y, String[] inventory)
 	{
 		this.firstName = firstName;
 		this.familyName = familyName;
 		this.x = x;
 		this.y = y;
+		this.inventory = inventory;
 	}
 	
 }
