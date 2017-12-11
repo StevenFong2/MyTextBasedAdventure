@@ -1,17 +1,10 @@
 
 public class Person 
 {
-	private String firstName;
-	private String familyName;
-	private int x, y;
+	String firstName;
+	String familyName;
+	int x, y;
 	
-	public Person (String firstName, String familyName, int x, int y)
-	{
-		this.firstName = firstName;
-		this.familyName = familyName;
-		this.x = x;
-		this.y = y;
-	}
 	
 	public String getfirstName()
 	{
@@ -23,14 +16,31 @@ public class Person
 		return this.familyName;
 	}
 	
+	public void setx(int x)
+	{
+		this.x = x;
+	}
+	
 	public int getx()
 	{
 		return this.x;
 	}
 	
-	public int gety()
+	public void sety(int y)
 	{
-	return this.y;	
+		this.y = y;
 	}
 	
+	public int gety()
+	{
+		return this.y;	
+	}
+	
+	public Person (String firstName, String familyName, int x, int y)
+	{
+		this.firstName = firstName;
+		this.familyName = familyName;
+		this.x = x;
+		this.y = y;
+	}
 }
