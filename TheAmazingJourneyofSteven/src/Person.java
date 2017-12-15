@@ -5,6 +5,12 @@ public class Person
 	String familyName;
 	int x, y;
 	String[] inventory;
+	int health;
+	int attack;
+	int defense;
+	int magic;
+	int resistance;
+	int speed;
 	
 	public String getfirstName()
 	{

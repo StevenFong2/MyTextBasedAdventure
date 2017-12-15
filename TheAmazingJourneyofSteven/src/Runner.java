@@ -22,7 +22,7 @@ public class Runner
 		//create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new Room(x,y);
+		building[x][y] = new WinningRoom(x,y);
 		
 		//setup Player 1 and the input scanner
 		String[] inventory = new String[10];
@@ -37,6 +37,7 @@ public class Runner
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
+			String command = in.nextLine();
 			if (building[player1.getx()][player1.gety()] instanceof LockedRoom)
 			{
 				int numKey = 0;
@@ -50,7 +51,11 @@ public class Runner
 				if (numKey > 0)
 				{
 					System.out.println("You tried opening the door with force but it did not budge.");
-					System.out.println("if only I have a key...");
+					System.out.println("If only I have a key...");
+				}
+				else if (command == "Use Key" && validMove(move, player1 , building) == true)
+				{
+					
 				}
 				else
 				{
@@ -59,8 +64,8 @@ public class Runner
 									   "\nYou can hear the sound of your stomach growling," +
 									   "\nYou grow hungrier day by day, and then you look at you own arm...");
 					System.out.println("You reached the end of your adventure... Better luck next time!");
+					gameOff();
 				}
-				gameOff();
 			}
 			else if (validMove(move, player1, building) == true)
 			{
