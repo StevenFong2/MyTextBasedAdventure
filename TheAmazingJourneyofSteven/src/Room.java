@@ -22,4 +22,23 @@ public class Room
 	{
 		occupant = null;
 	}
+	
+	private boolean explored = false;
+	public void print()
+	{
+		if(!explored && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored)
+		{
+			System.out.print("E");
+		}
+	}
 }

@@ -18,6 +18,9 @@ public class Runner
 		}
 		//Used to reference the current room you are currently in
 		building[0][1] = new LockedRoom(0,1);
+		building[1][2] = new PoisonRoom(1,2);
+		building[0][2] = new DeathRoom(0,2);
+		building[4][2] = new LionRiddle(4,2);
 	
 		//create a random winning room.
 		int x = (int)(Math.random()*building.length);
