@@ -26,9 +26,9 @@ public class Runner
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x,y);
-		String[] inventory = Person.inventory;
+		String[] startinginventory = new String[10];
 		//setup Player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0, 0, inventory);
+		Person player1 = new Person("FirstName", "FamilyName", 0, 0, startinginventory);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while (gameOn)
