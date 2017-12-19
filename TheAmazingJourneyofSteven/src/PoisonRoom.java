@@ -1,7 +1,5 @@
-public class PoisonRoom extends Room {
-
-
-
+public class PoisonRoom extends Room 
+{
 	public PoisonRoom(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
@@ -15,5 +13,4 @@ public class PoisonRoom extends Room {
 		System.out.println("As you walk into the room, you hear the door behind you slamming shut. A gas begins to fill the room from small slits"
 				+ " in the walls.");
 	}
-	
 }

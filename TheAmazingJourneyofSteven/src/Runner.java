@@ -26,51 +26,16 @@ public class Runner
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x,y);
-		
+		String[] inventory = Person.inventory;
 		//setup Player 1 and the input scanner
-		String[] inventory = new String[10];
-		for (int i = 0; i < inventory.length; i++)
-		{
-			inventory[i] = "";
-		}
-		Person player1 = new Person("FirstName", "FamilyName", 0,0, inventory);
+		Person player1 = new Person("FirstName", "FamilyName", 0, 0, inventory);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while (gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			String command = in.nextLine();
-			if (building[player1.getx()][player1.gety()] instanceof LockedRoom)
-			{
-				int numKey = 0;
-				for(int i = 0; i < player1.inventory.length; i++)
-				{
-					if (player1.inventory[i].equals("Key"))
-					{
-						numKey++;
-					}
-				}
-				if (numKey > 0)
-				{
-					System.out.println("You tried opening the door with force but it did not budge.");
-					System.out.println("If only I have a key...");
-				}
-				else if (command == "Use Key" && validMove(move, player1 , building) == true)
-				{
-					
-				}
-				else
-				{
-					System.out.println("You tried opening the door with force but it did not budge.");
-					System.out.println("Having no Key you are stuck in that room for eternity..." +
-									   "\nYou can hear the sound of your stomach growling," +
-									   "\nYou grow hungrier day by day, and then you look at you own arm...");
-					System.out.println("You reached the end of your adventure... Better luck next time!");
-					gameOff();
-				}
-			}
-			else if (validMove(move, player1, building) == true)
+			if (validMove(move, player1, building) == true)
 			{
 				System.out.println("Your coordinates: row = " + player1.getx() + " col = " + player1.gety());
 			}
@@ -140,6 +105,13 @@ public class Runner
 			}
 	}
 	
+	public void printboard(Room [][] someinput, Person p)
+	{
+		if (someinput[p.getx()][p.gety()].occupant != null)
+		{
+			
+		}
+	}
 	public static void gameOff()
 	{
 		gameOn = false;
