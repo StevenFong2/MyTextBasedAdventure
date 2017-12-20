@@ -13,14 +13,14 @@ public class LockedRoom extends Room
 		occupant = p;
 		p.setx(this.x);
 		p.sety(this.y);
-		int numKey = 0;
-		for(int i = 0; i < occupant.inventory.length; i++)
+		int numKey = 1;
+		/*for(int i = 0; i < occupant.inventory.length; i++)
 		{
-			if (occupant.inventory[i].equals("Key"))
+			if (p.inventory[i].equals("Key"))
 			{
 				numKey++;
 			}
-		}
+		}*/
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine().toLowerCase().trim();
 		while (!command.equals("use key"))
@@ -33,11 +33,13 @@ public class LockedRoom extends Room
 								   "\nYou grow hungrier day by day, and then you look at you own arm...");
 				System.out.println("You reached the end of your adventure... Better luck next time!");
 				Runner.gameOff();
+				break;
 			}
-			if (numKey > 0)
+			else if (numKey > 0)
 			{
 				System.out.println("You tried opening the door with force but it did not budge.");
 				System.out.println("If only I have a key...");
+				command = in.nextLine().toLowerCase().trim();
 			}
 		}
 		if (command.equals("use key"))
