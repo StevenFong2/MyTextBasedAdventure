@@ -21,6 +21,7 @@ public class LockedRoom extends Room
 				numKey++;
 			}
 		}*/
+		
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine().toLowerCase().trim();
 		while (!command.equals("use key"))
