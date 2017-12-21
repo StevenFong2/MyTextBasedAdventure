@@ -11,10 +11,10 @@ public class LionRiddle extends Room {
 		x.sety(this.y);
 		System.out.println("You enter a room that gives you an eerie feeling. Unlike the rest of the rooms, this one is decorated \n "
 				+ "with drawing of weapons. One image stands out in particular, a king being hung. \n \n At the center of the room"
-				+ " you see a stone lion with a tablet beneath its paws.");
+				+ " you see a stone lion with a tablet beneath its paws. The the tablet reads:");
 		
 		//Final Challenge Started
-		System.out.println("Subversive is I \n With only one eye \n I have a bell inside \n I am a way to be free \n And created by someone unhappy \n At the end, a feline resides \n What am I?"
+		System.out.println("Subversive is I \nWith only one eye \nI have a bell inside \nI am a way to be free \nAnd created by someone unhappy \nAt the end, a feline resides \nWhat am I?"
 				+ "");
 	}
 }
