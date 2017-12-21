@@ -1,3 +1,4 @@
+//Saurabh Bansal
 import java.util.Scanner;
 public class MarvelvsDC extends Room
 {
@@ -15,105 +16,26 @@ public class MarvelvsDC extends Room
 		occupant = x;
 		x.setx(this.x);
 		x.sety(this.y);
-		System.out.println("Entered the Stars Wars room, you have!");
-		System.out.println("Play the Game you must. CHOOSE YOUR LIGHTSABER.");
-		System.out.println("(Choose Lightsaber you must.)");
-		System.out.println("Color in you must type.");
 		
-		System.out.println("Red, Yellow, Blue, Purple, Green, Black");
+		System.out.println("AH the fantastic world of Comics. An infinite universe ");
+		System.out.println("Play this game you must. Choose a universe you must. DC or Marvel. Each has a unique story. If you don't choose a universe, "
+				+ "YOU LOSE!");
+		
 		statement = in.nextLine();
 		if (statement.length() == 0)
 		{
-			System.out.println("I will not repeat myself!");
-		}
-		else if (findKeyword(statement, "red") >= 0)
-		{
-			System.out.println("Ah, you have chosen the color of the sith! There can only be two, a master and an apprentice");
-			System.out.println("Who do you want to kill? The master or the apprentice?");
-			if (statement.equals ("master") || statement.equals ("Master") || statement.equals("MASTER"))
-			{
-				System.out.println("Oh no, you've died! The sith lord is too powerful for you.");
-				Runner.gameOff();
-			}
-			else
-			{
-				System.out.println("Congrats, you are now the Sith apprentice. Sadly, Count Dooku does not like this and has challenged you to a duel");
-				System.out.println("How do you wish to win? Will you cheat or will you be fair?");
-				if (findKeyword (statement,"cheat") >= 0)
-				{
-					System.out.println("You are truly a sith. You can pass this room.");
-				}
-				else
-				{
-					System.out.println("What is wrong with you? You are a sith! You don't play by the rules. YOU MAKE YOUR OWN RULES!");
-					Runner.gameOff();
-				}
-			}
-		}
-		else if (findKeyword (statement, "yellow") >= 0)
-		{
-			System.out.println("Ah, you have chosen the color of a Jedi Sentinal! You are more towards the non-Force side of the family.");
-			System.out.println("You have a choice: Become a Temple Guard or become a Jedi Shadow. (Please write the whole name)");
-			if (findKeyword (statement, "temple guard") >= 0)
-			{
-				System.out.println("You have been placed to watch the holocron database. Will you stay true to your duties or will you steal a holocron?");
-				if (findKeyword (statement, "steal") >= 0)
-				{
-					System.out.println("Tsk, Tsk. Yoda caught you. You have now been sentenced for life in prison in which you will die. Remember you are a jedi, Jedi follow the Jedi Code.");
-					Runner.gameOff();
-				}
-				else 
-				{
-					System.out.println("Good job! You can now proceed to the next room.");
-				}
-			}
-		}
-		else if (findKeyword (statement, "blue") >= 0)
-		{
-			System.out.println ("Ah you have become a Jedi Guardian. Good choice. Your task is to defend all those who are weak. Throughout your life you will notice"
-					+ " people fighting those who can't defend themselves. Go out and help everyone. The force will protect you.");
-		}
-		else if (findKeyword (statement, "purple") >= 0)
-		{
-			System.out.println ("Ah you have chosen a rare lightsaber. You are now Mace Windu. Sadly, you die from the hands of the Sith Lord Darth Sidious. Better luck next time.");
 			Runner.gameOff();
 		}
-		else if (findKeyword (statement, "green") >= 0)
+		else if (findKeyword(statement, "dc") >= 0)
 		{
-			System.out.println("You are a Jedi Counselor. Wisest of the wise. You have a choice to teach the future generation, or meditate alongside Master Yoda. What will it be?");
-			if (findKeyword (statement, "meditate") >= 0)
-			{
-				System.out.println("While meditating, you found out that the Chancellor is the Sith Lord. Will you tell the Jedi Order or kill him yourself?");
-				if (findKeyword (statement, "kill") >= 0)
-				{
-					System.out.println("You have broken the Jedi code, and you have been killed by the sith lord. Did you really think you could beat him!?");
-					Runner.gameOff();
-				}
-				else
-				{
-					System.out.println("Good Job! The chancellor was arrested and taken care of!");
-				}
-			}
-			else 
-			{
-				System.out.println("You have taught students for 100's of years and now you have retired! Enjoy retirement!");
-				Runner.gameOff();
-			}
-		}
-		else if (findKeyword (statement, "black") >= 0)
-		{
-			System.out.println("THE ANCIENT DARKSABER! Used to kill the Jedi by the Mandalorian War Clan. "
-					+ "You don't like being told what to do! You shall go on and live your own life!");
+			System.out.println("You have a choice to be a superhero. Each hero has their own story.");
+			System.out.println("Heroes: Batman, Superman, Wonder Woman, Cyborg, Green lantern");
 		}
 		else
 		{
-			{
-				System.out.println();
-			}
 			return;
 		}
 	}
-	
 	public void leaveRoom(Person x)
 	{
 		occupant = null;
