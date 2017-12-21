@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class LockedRoom extends Room
 {
 	public LockedRoom(int x, int y)
@@ -14,13 +15,13 @@ public class LockedRoom extends Room
 		p.setx(this.x);
 		p.sety(this.y);
 		int numKey = 1;
-		/*for(int i = 0; i < occupant.inventory.length; i++)
+		for(int i = 0; i < occupant.inventory.length; i++)
 		{
 			if (p.inventory[i].equals("Key"))
 			{
 				numKey++;
 			}
-		}*/
+		}
 		
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine().toLowerCase().trim();
@@ -45,7 +46,7 @@ public class LockedRoom extends Room
 		}
 		if (command.equals("use key"))
 		{
-			System.out.println("You made it out of the room, choose your next move");
+			System.out.println("All the doors are now unlocked.");
 		}
 	}
 }
