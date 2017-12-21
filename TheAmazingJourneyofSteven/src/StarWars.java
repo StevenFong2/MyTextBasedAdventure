@@ -18,8 +18,8 @@ public class StarWars extends Room
 		x.sety(this.y);
 		System.out.println("Entered the Stars Wars room, you have!");
 		System.out.println("Play the Game you must. CHOOSE YOUR LIGHTSABER.");
-		System.out.println("(You have a choice of what color lightsaber)");
-		System.out.println("Type in the color");
+		System.out.println("(Choose Lightsaber you must.)");
+		System.out.println("Color in you must type.");
 		
 		System.out.println("Red, Yellow, Blue, Purple, Green, Black");
 		statement = in.nextLine();
