@@ -1,11 +1,11 @@
 //Saurabh Bansal
 import java.util.Scanner;
-public class MarvelvsDC extends Room
+public class MarvelvDC extends Room
 {
 	Scanner in = new Scanner (System.in);
 	String statement = "";
 	
-	public MarvelvsDC(int x, int y)
+	public MarvelvDC(int x, int y)
 	{
 		super(x,y);
 	}
