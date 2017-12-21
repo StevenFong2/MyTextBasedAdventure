@@ -19,6 +19,7 @@ public class Board
 			}
 			a++;
 		}*/
+		// I still need to finish this and add more rooms because as of right now the GAME IS MADDDD HARD TO BEAT!!
 		for (int i = 0; i < dungeon.length; i++)
 		{
 			for (int j = 0; j < dungeon[i].length; j++)
