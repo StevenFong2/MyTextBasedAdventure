@@ -2,7 +2,7 @@ public class Thief extends Person {
 		private String[] inventory = {"Dagger", "Lockpick"};
 		public Thief(String firstName, String familyName, int x, int y, String[] inventory) {
 		super(firstName, familyName, x, y, inventory);
-		this.health = 19;
+		this.health = 20;
 		this.attack = 26;
 		this.defense = 15;
 		this.magic = 16;

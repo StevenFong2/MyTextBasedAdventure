@@ -2,7 +2,7 @@ public class Warrior extends Person {
 	private String[] inventory = {"Longsword", "Health"};
 	public Warrior(String firstName, String familyName, int x, int y, String[] inventory) {
 	super(firstName, familyName, x, y, inventory);
-	this.health = 28;
+	this.health = 30;
 	this.attack = 19;
 	this.defense = 36;
 	this.magic = 13;
