@@ -13,4 +13,22 @@ public class PoisonRoom extends Room
 		System.out.println("As you walk into the room, you hear the door behind you slamming shut. A gas begins to fill the room from small slits"
 				+ " in the walls.");
 	}
+	
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[P]");
+		}
+	}
 }

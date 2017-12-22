@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class LockedRoom extends Room
 {
+	private boolean explored = false;
 	public LockedRoom(int x, int y)
 	{
 		super(x, y);
@@ -47,6 +48,24 @@ public class LockedRoom extends Room
 		if (command.equals("use key"))
 		{
 			System.out.println("All the doors are now unlocked.");
+		}
+	}
+	
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[L]");
 		}
 	}
 }

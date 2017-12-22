@@ -46,16 +46,19 @@ public class Board
 				}
 			}
 		}
+		dungeon[0][0] = new Room(0,0);
+		
 	}
 	
-	public void printMap(Room[][] something)
+	public void printMap()
 	{
-		for (int i = 0; i < something.length; i++)
+		for (int i = 0; i < dungeon.length; i++)
 		{
-			for (int j = 0; j < something[i].length; j++)
+			for (int j = 0; j < dungeon[i].length; j++)
 			{
-				something[i][j].print();
+				dungeon[i][j].print();
 			}
+			System.out.println();
 		}
 	}
 	

@@ -3,6 +3,7 @@ public class Room
 {
 	Person occupant;
 	int x , y;
+	boolean explored = false;
 	
 	public Room(int x, int y)
 	{
@@ -12,10 +13,11 @@ public class Room
 	
 	public void enterRoom(Person p)
 	{
-		System.out.println("You wake up in a random, worn down room...");
+		System.out.println("This just looks like a plain old room...");
 		occupant = p;
 		p.setx(this.x);
 		p.sety(this.y);
+		explored = true;
 	}
 	
 	public void leaveRoom(Person x)
@@ -23,10 +25,9 @@ public class Room
 		occupant = null;
 	}
 	
-	private boolean explored = false;
 	public void print()
 	{
-		if(!explored && occupant == null)
+		if(explored == false && occupant == null)
 		{
 			System.out.print("[ ]");
 		}
@@ -36,9 +37,9 @@ public class Room
 			occupant.print();
 			System.out.print("]");
 		}
-		else if(explored)
+		else if(explored == true)
 		{
-			System.out.print("E");
+			System.out.print("[R]");
 		}
 	}
 }

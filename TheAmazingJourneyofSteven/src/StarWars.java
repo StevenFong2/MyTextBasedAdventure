@@ -151,4 +151,22 @@ public class StarWars extends Room
 	{
 			return findKeyword (statement, goal, 0);
 	}
+	
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[S]");
+		}
+	}
 }

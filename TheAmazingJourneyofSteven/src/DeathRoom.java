@@ -2,6 +2,7 @@ import java.util.Random;
 
 public class DeathRoom extends Room
 {
+	private boolean explored = false;
 	public DeathRoom(int x, int y)
 	{
 		super(x,y);
@@ -12,6 +13,7 @@ public class DeathRoom extends Room
 		occupant = p;
 		p.setx(this.x);
 		p.sety(this.y);
+		explored = true;
 		System.out.println("You enter a room," + 
 						   "\nsuddenly metal bars come out from the entrance," + 
 						   "\nlocking you in, slowly the lights start to dim out " +
@@ -31,4 +33,22 @@ public class DeathRoom extends Room
 			"\nthen the ceiling lights up and giant bone grinding motors roars loudly," + "\nthe ceiling then starts lowerng itelf.",
 			"\nslowly you feel yourself loosing conciousness," + "\nas your vision blurs you loose sense of the world"
 	};
+	
+	public void print()
+	{
+		if(explored == false && occupant == null)
+		{
+			System.out.print("[ ]");
+		}
+		else if(occupant != null)
+		{
+			System.out.print("[");
+			occupant.print();
+			System.out.print("]");
+		}
+		else if(explored == true)
+		{
+			System.out.print("[D]");
+		}
+	}
 }

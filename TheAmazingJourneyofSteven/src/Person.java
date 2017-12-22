@@ -50,9 +50,11 @@ public class Person
 		this.y = y;
 		this.inventory = inventory;
 	}
+	
+	
 
 	public void print() {
-		System.out.print("P");
+		System.out.print("C");
 		
 	}
 	
