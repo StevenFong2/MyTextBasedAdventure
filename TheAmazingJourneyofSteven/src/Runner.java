@@ -40,7 +40,6 @@ public class Runner
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			String command = in.nextLine();
 			if (building[player1.getx()][player1.gety()] instanceof LockedRoom)
 			{
 				int numKey = 0;
@@ -55,10 +54,6 @@ public class Runner
 				{
 					System.out.println("You tried opening the door with force but it did not budge.");
 					System.out.println("If only I have a key...");
-				}
-				else if (command == "Use Key" && validMove(move, player1 , building) == true)
-				{
-					
 				}
 				else
 				{
