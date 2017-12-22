@@ -30,7 +30,7 @@ public class LionRiddle extends Room {
 			occupant.print();
 			System.out.print("]");
 		}
-		else if(explored == true)
+		else if(explored == true && occupant == null)
 		{
 			System.out.print("[R]");
 		}
