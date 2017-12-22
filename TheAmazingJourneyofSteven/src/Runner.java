@@ -41,32 +41,6 @@ public class Runner
 			map.printMap();
 			String move = in.nextLine();
 
-			if (map[player1.getx()][player1.gety()] instanceof LockedRoom)
-			{
-				int numKey = 0;
-				for(int i = 0; i < player1.inventory.length; i++)
-				{
-					if (player1.inventory[i].equals("Key"))
-					{
-						numKey++;
-					}
-				}
-				if (numKey > 0)
-				{
-					System.out.println("You tried opening the door with force but it did not budge.");
-					System.out.println("If only I have a key...");
-				}
-				else
-				{
-					System.out.println("You tried opening the door with force but it did not budge.");
-					System.out.println("Having no Key you are stuck in that room for eternity..." +
-									   "\nYou can hear the sound of your stomach growling," +
-									   "\nYou grow hungrier day by day, and then you look at you own arm...");
-					System.out.println("You reached the end of your adventure... Better luck next time!");
-					gameOff();
-				}
-			}
-
 			if (validMove(move, player1, map.getmap()) == true)
 
 			{
