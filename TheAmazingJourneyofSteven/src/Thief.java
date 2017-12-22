@@ -9,6 +9,7 @@ public class Thief extends Person {
 		this.resistance = 12;
 		this.speed = 44;
 		this.setInventory(inventory);
+		//please work
 	}
 	public String[] getInventory() {
 		return inventory;
