@@ -34,11 +34,14 @@ public class Runner
 		String[] startinginventory = new String[10];
 		Person player1 = new Person(firstname, familyname , 0, 0, startinginventory);
 		map.dungeon[0][0].enterRoom(player1);
+		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
+		System.out.println("Where would you like to move? (Choose N, S, E, W)");
+		map.printMap();
 		while (gameOn)
 		{
-			System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
+			/*System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
-			map.printMap();
+			map.printMap();*/
 			String move = in.nextLine();
 
 			if (validMove(move, player1, map.getmap()) == true)
