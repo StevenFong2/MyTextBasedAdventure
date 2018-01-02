@@ -101,7 +101,7 @@ public class Runner
 				if (p.gety() > 0)
 				{
 					map[p.getx()][p.gety()].leaveRoom(p);
-					map[p.getx()][p.gety() - 1].leaveRoom(p);
+					map[p.getx()][p.gety() - 1].enterRoom(p);
 					return true;
 				}
 				else
