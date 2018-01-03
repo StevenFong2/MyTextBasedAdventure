@@ -29,20 +29,28 @@ public class Board
 				{
 				case 0:
 					dungeon[i][j] = new LionRiddle(i, j);
+					break;
 				case 1:
 					dungeon[i][j] = new PoisonRoom(i, j);
+					break;
 				case 2:
 					dungeon[i][j] = new StarWars(i, j);
+					break;
 				case 3:
 					dungeon[i][j] = new LockedRoom(i, j);
+					break;
 				case 4:
 					dungeon[i][j] = new DeathRoom(i, j);
+					break;
 				case 5:
 					dungeon[i][j] = new MarvelvDC(i, j);
+					break;
 				case 6:
 					dungeon[i][j] = new Room(i, j);
+					break;
 				default:
 					dungeon[i][j] = new Room(i, j);
+					break;
 				}
 			}
 		}

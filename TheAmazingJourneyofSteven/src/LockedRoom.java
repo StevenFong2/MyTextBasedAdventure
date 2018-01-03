@@ -12,6 +12,7 @@ public class LockedRoom extends Room
 	{
 		System.out.println("You see a dark room, curious you walk towards it, suddenly the doors slammed shut, locking you in..." 
 							+ "\nIf only you had a key...");
+		
 		occupant = p;
 		p.setx(this.x);
 		p.sety(this.y);
@@ -49,6 +50,7 @@ public class LockedRoom extends Room
 		{
 			System.out.println("All the doors are now unlocked.");
 		}
+		in.close();
 	}
 	
 	public void print()
