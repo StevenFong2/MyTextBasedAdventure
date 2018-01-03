@@ -1,7 +1,6 @@
 public class Person 
 {
-	String firstName;
-	String familyName;
+	String Name;
 	int x, y;
 	String[] inventory;
 	int health;
@@ -11,14 +10,9 @@ public class Person
 	int resistance;
 	int speed;
 	
-	public String getfirstName()
+	public String getName()
 	{
-		return this.firstName;
-	}
-	
-	public String getfamilyName()
-	{
-		return this.familyName;
+		return this.Name;
 	}
 	
 	public void setx(int x)
@@ -41,10 +35,9 @@ public class Person
 		return this.y;	
 	}
 	
-	public Person (String firstName, String familyName, int x, int y, String[] inventory)
+	public Person (String Name, int x, int y, String[] inventory)
 	{
-		this.firstName = firstName;
-		this.familyName = familyName;
+		this.Name = Name;
 		this.x = x;
 		this.y = y;
 		this.inventory = inventory;

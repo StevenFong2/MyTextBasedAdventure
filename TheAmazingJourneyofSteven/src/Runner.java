@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Runner 
 {
-	private static String firstname;
-	private static String familyname;
+	private static String Name;
 	private static boolean gameOn = true;
 	private static boolean pregame = true;
 	
@@ -25,9 +24,8 @@ public class Runner
 		{
 			System.out.println("This is where the introduction of the game goes and the explanation of all the rules which I am not too sure of what if is yet.");
 			System.out.println("Please eneter your full name with a space between your first and last, if you have a middle, name too bad,");
-			String fullname = in.nextLine();
-			setupname(fullname);
-			System.out.println("Welcom to the game Mr." + familyname);
+			String name = in.nextLine();
+			System.out.println("Welcom to the game " + name);
 			
 			pregame = false;
 		}
@@ -36,7 +34,7 @@ public class Runner
 		{
 			startinginventory[i] = "";
 		}
-		Person player1 = new Person(firstname, familyname , 0, 0, startinginventory);
+		Person player1 = new Person(Name, 0, 0, startinginventory);
 		map.dungeon[0][0].enterRoom(player1);
 		map.dungeon[0][1] = new LockedRoom(0,1);
 		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
@@ -123,10 +121,7 @@ public class Runner
 	
 	public static void setupname(String somename)
 	{
-		somename = somename.trim().toLowerCase();
-		int psn = somename.indexOf(" ");
-		firstname = somename.substring(0, 1).trim().toUpperCase() + somename.substring(1, psn).trim();
-		familyname = somename.substring(psn + 1, psn + 2).trim().toUpperCase() + somename.substring(psn + 2).trim();
+		Name = somename;
 	}
 	
 	public static void gameOff()
