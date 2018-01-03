@@ -35,7 +35,7 @@ public class LionRiddle extends Room {
 		}
 		if(riddlevalue == 3)
 		{
-			System.out.println("I'm a word, six letters long,"
+			System.out.println("I am a word, six letters long."
 					+ "\nI sometimes enter with a gong."
 					+ "\nAll in order from A to Z,"
 					+ "\nI start with the letter B.");
