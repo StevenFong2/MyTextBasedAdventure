@@ -18,8 +18,8 @@ public class MarvelvDC extends Room
 		x.sety(this.y);
 		
 		System.out.println("AH the fantastic world of Comics. An infinite universe ");
-		System.out.println("Play this game you must. Choose a universe you must. DC or Marvel. Each has a unique story. If you don't choose a universe, "
-				+ "YOU LOSE!");
+		System.out.println("Play this game you must. Choose a universe you must. DC or Marvel. "
+				+ "/n Each has a unique story. If you don't choose a universe, YOU LOSE!");
 		
 		statement = in.nextLine();
 		if (statement.length() == 0)
@@ -37,26 +37,26 @@ public class MarvelvDC extends Room
 			else if (findKeyword (statement, "batman") >= 0)
 			{
 				System.out.println("You are Bruce Wayne. Your parents were murdered in front of you, and now you have been "
-						+ "in Nanda Parbat training with Rha's Al Ghul. You are his most experienced fighter");
+						+ "/n in Nanda Parbat training with Rha's Al Ghul. You are his most experienced fighter");
 				System.out.println("Rha's Al Ghul has given you the opportunity to be his successor. Do you choose to accept?");
 				if (findKeyword(statement, "yes") >= 0)
 				{
 					System.out.println ("You are now the successor of the most elite group of Assassins, League of Assassins,"
-							+ " known to mankind."
-							+ "Gotham (your home city) has fallen prey to corruption; What would you do?"
-							+ "Use the assassins, destroy the city and rebuild, or will you just not care.");
+							+ "known to mankind."
+							+ "/n Gotham (your home city) has fallen prey to corruption; What would you do?"
+							+ "/n Use the assassins, destroy the city and rebuild, or will you just not care.");
 					if (findKeyword(statement, "assassins") >= 0)
 					{
 						System.out.println("You have killed all known corrupt officials. Sadly, one of them was your "
-								+ "girlfriend who you loved with all your heart and soul. You now will live the rest of your life"
-								+ " knowing you killed your girlfriend, but as the leader of the League of Assassins.");
+								+ "/n girlfriend who you loved with all your heart and soul. You now will live the rest of your life"
+								+ "/n knowing you killed your girlfriend, but as the leader of the League of Assassins.");
 					}
 					else if (findKeyword (statement, "destroy") >= 0)
 					{
 						System.out.println("Jesus Christ! You have burnt Gotham to the ground. EVERYONE IS DEAD."
-								+ " I can't believe you think of yourself as a hero. Some people don't like the fact"
-								+ " you destroyed Gotham. They have come to attack you at Nanda Parbat. Will you defend, or "
-								+ "kill them first?");
+								+ "/n I can't believe you think of yourself as a hero. Some people don't like the fact"
+								+ "/n you destroyed Gotham. They have come to attack you at Nanda Parbat. Will you defend, or "
+								+ "/n kill them first?");
 						if (findKeyword (statement, "defend") >= 0)
 						{
 							System.out.println("You have defended, but at a cost. You died while defending.");
@@ -64,27 +64,29 @@ public class MarvelvDC extends Room
 						}
 						else 
 						{
-							System.out.println("You are a ruthless killer. Go on and PLZ DONT KILL ME FOR HOLDING YOU! I have a wife and child! "
-									+ "My wife's name is Microsoft and my child is XBOX. He has truly grown!");
+							System.out.println("You are a ruthless killer. Go on and PLZ DONT KILL ME FOR HOLDING YOU! "
+									+ "/n I have a wife and child! "
+									+ "/n My wife's name is Microsoft and my child is XBOX. He has truly grown!");
 						}
 					}
 					else
 					{
-						System.out.println("Noice, enjoy your life with the treasure and power you have. You will sadly be stuck in "
-								+ "the game forever because we love you that much.");
+						System.out.println("Noice, enjoy your life with the treasure and power you have. "
+								+ "/n You will sadly be stuck in the game forever because we love you that much.");
 						Runner.gameOff();
 					}
 				}
 				else
 				{
 					System.out.println("You have chosen the path of Batman. There comes a time in your life where you "
-							+ "meet Rha's Al Ghul's daughter (Talia Al Ghul). You have a child with her, but she takes the child to Nanda Parbat."
-							+ " He becomes a ruthless killer, but an attack leads Talia to bring the son to you."
-							+ " Your son is an absolute killer. Are you willing to teach him the ways of Batman?");
+							+ "meet Rha's Al Ghul's daughter (Talia Al Ghul). "
+							+ "/n You have a child with her, but she takes the child to Nanda Parbat."
+							+ "/n He becomes a ruthless killer, but an attack leads Talia to bring the son to you."
+							+ "/n Your son is an absolute killer. Are you willing to teach him the ways of Batman?");
 					if (findKeyword (statement, "yes") >= 0)
 					{
 						System.out.println ("Patiently, you got your son to learn to think first and then kill."
-								+ " He has now worn the mantle of Robin, and you two work together to fight crime.");
+								+ "/n He has now worn the mantle of Robin, and you two work together to fight crime.");
 					}
 					else 
 					{
@@ -96,12 +98,32 @@ public class MarvelvDC extends Room
 			else if (findKeyword(statement, "super") >= 0)
 			{
 				System.out.println("You are the Kryptonite (god) sent from a spaceship to keep you safe from the evil regime!"
-						+ "You have lived a life on a farm and you are the STRONGEST man alive!"
-						+ "You like a girl named Lois Lane! She ");
+						+ "/n You have lived a life on a farm and you are the STRONGEST man alive!"
+						+ "/n Now it is your choice to be a hero or a god.");
+				if (findKeyword (statement, "hero") >= 0)
+				{
+					System.out.println ("You chose the right path! You can proceed.");
+				}
+				else
+				{
+					System.out.println ("You are now a god feared by all and challenged to a deul by Batman."
+							+ "/n It is your choice if you want to kill him or watch him suffer.");
+					if (findKeyword (statement, "kill") >= 0)
+					{
+						System.out.println("You tried killing the batman, and he had Kryptonite (your only weakness)."
+								+ "/n You have died, better luck next time.");
+								Runner.gameOff();
+					}
+					else 
+					{
+						System.out.println("In the midst of your fight with Batman, Darkseid has appeared and now you must fight him.");
+						System.out.println("Good luck.");
+					}
+				}
 			}
 			else if (findKeyword(statement, "wonder") >= 0)
 			{
-				
+				System.out.println("");
 			}
 			else if (findKeyword (statement, "cyb") >= 0)
 			{
