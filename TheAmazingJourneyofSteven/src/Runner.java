@@ -26,7 +26,7 @@ public class Runner
 			System.out.println("This is where the introduction of the game goes and the explanation of all the rules which I am not too sure of what if is yet.");
 			System.out.println("Please eneter your full name with a space between your first and last, if you have a middle, name too bad,");
 			String name = in.nextLine();
-			System.out.println("Welcom to the game " + name);
+			System.out.println("Welcome to the game " + name);
 			
 			pregame = false;
 		}
@@ -35,7 +35,7 @@ public class Runner
 		{
 			startinginventory[i] = "";
 		}
-		Person player1 = new Person(Name, 0, 0, startinginventory);
+		Person player1 = new Person(Name, Name, 0, 0, startinginventory);
 		map.dungeon[0][0].enterRoom(player1);
 		map.dungeon[0][1] = new LockedRoom(0,1);
 		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");

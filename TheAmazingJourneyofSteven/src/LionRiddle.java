@@ -21,8 +21,9 @@ public class LionRiddle extends Room {
 				+ "\n \n At the center of the room"
 				+ " you see a stone lion with a tablet beneath its paws. The the tablet reads:");
 		
-		//Final Challenge Started
+		//Challenge Started
 		int riddlevalue = R.nextInt(5) + 1;
+		boolean Answered = false;
 		if(riddlevalue == 1)
 		{
 		System.out.println("Subversive is I "
@@ -31,7 +32,7 @@ public class LionRiddle extends Room {
 				+ " \nI am a way to be free"
 				+ " \nAnd created by someone unhappy "
 				+ "\nAt the end, a feline resides");
-		Answer = "Rebellion";
+		Answer = "rebellion";
 		}
 		if(riddlevalue == 2)
 		{
@@ -39,7 +40,7 @@ public class LionRiddle extends Room {
 					+ "\nbattlefronts, and crumbling ridges."
 					+ "\nWhen he comes, he comes alone,"
 					+ "\ntaps a shoulder, then is gone.");
-			Answer = "Death";
+			Answer = "death";
 		}
 		if(riddlevalue == 3)
 		{
@@ -47,14 +48,14 @@ public class LionRiddle extends Room {
 					+ "\nI sometimes enter with a gong."
 					+ "\nAll in order from A to Z,"
 					+ "\nI start with the letter B.");
-			Answer = "Begin";
+			Answer = "begin";
 		}
 		if(riddlevalue == 4)
 		{
 			System.out.print("I eat, I live"
 					+ "\nI breath, I live"
 					+ "\nI drink, I die");
-			Answer = "Fire";
+			Answer = "fire";
 		}
 		if(riddlevalue ==5)
 		{
@@ -67,8 +68,31 @@ public class LionRiddle extends Room {
 					+ "\nPatience and Time will always win me"
 					+ "\nWith nothing but a sign of ink, I come to life upon request"
 					+ "\nAnd in my final breathe, I determine not who's right, but who is left" );
-			Answer = "War";
+			Answer = "war";
 		}
+		int deathtime = 5;
+		Scanner in = new Scanner(System.in);
+		String UserAns = in.nextLine();
+		if(UserAns == Answer)
+		{
+			Answered = true;
+		}
+		while(Answered != true)
+		{
+			System.out.println("You feel yourself draw closer to death."
+					+ "Input the answer to the riddle and save yourself.");
+			deathtime--;
+			if(deathtime == 0)
+			{
+				System.out.println("You see the statue of the lion come to life and walks towards you."
+						+ "\nIt looks disappointed as it stares into your very soul."
+						+ "\n"
+						+ "\n'Tragic...I thought you were worthy', it says as it bites down on your"
+						+ "\nhead, killing you.");
+				Runner.gameOff();
+			}
+		}
+		in.close();
 	}
 	
 	public void print()
