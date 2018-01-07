@@ -1,3 +1,4 @@
+//Mamadou
 public class Warrior extends Person {
 	private String[] inventory = {"Longsword", "Health"};
 	public Warrior(String firstName, String familyName, int x, int y, String[] inventory) {

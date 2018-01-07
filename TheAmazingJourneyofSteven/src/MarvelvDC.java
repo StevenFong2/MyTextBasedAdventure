@@ -29,7 +29,7 @@ public class MarvelvDC extends Room
 		else if (findKeyword(statement, "dc") >= 0)
 		{
 			System.out.println("You have a choice to be a superhero. Each hero has their own story.");
-			System.out.println("Heroes: Batman, Superman, Wonder Woman, Cyborg, Green lantern");
+			System.out.println("Heroes: Batman, Superman, Wonder Woman");
 			if (statement.length() == 0)
 			{
 				Runner.gameOff();
@@ -123,49 +123,86 @@ public class MarvelvDC extends Room
 			}
 			else if (findKeyword(statement, "wonder") >= 0)
 			{
-				System.out.println("");
+				System.out.println("Ah you are the beautiful Amazonian Princess. You find a man on the beach of Amazon."
+						+ "/n You have a choice to help him in WW2 or to execute him.");
+				if (findKeyword (statement, "Help") >= 0)
+				{
+					System.out.println("You helped him throughout WW2, but you discover a new thing about yourself,"
+							+ "/n you are the daughter of Hades. Yikkes. Please pass through and don't kill me.");
+				}
+				else
+				{
+					System.out.println("A great war came to Amazon and everyone died. Since you're immortal, you didn't die."
+							+ "/n Now you must live your life with the guilt of the death of all your sisters.");
+				}
 			}
-			else if (findKeyword (statement, "cyb") >= 0)
+			else
 			{
-				
-			}
-			else //Green Lantern
-			{
-				
+				return;
 			}
 		}
-		else if (findKeyword (statement, "marvel")>=0)
+		else
 		{
 			System.out.println("You have a choice to be a superhero. Each hero has their own story.");
-			System.out.println("Heroes: Iron Man, Hulk, Black Widow, Captain America, or Black Panther");
+			System.out.println("Heroes: Iron Man, Captain America, or Black Panther");
 			if (statement.length() == 0)
 			{
 				Runner.gameOff();
 			}
 			else if (findKeyword (statement, "iron") >= 0)
 			{
-				
+				System.out.println("Tony Stark. The Invincible Iron Man. You are the tech genius who made a fortune "
+						+ "as CEO of Stark Industries."
+						+ "/n You see a dilemma in your weapons creation, bad people get ahold of it and then they hurt inncoent people."
+						+ "/n You now embark on an adventure to end all production of weapons, but there are people who don't like this plan."
+						+ "/n Will you end all production as CEO of Stark Industries, or as Iron Man, or both?");
+				if (findKeyword (statement, "iron") >= 0)
+				{
+					System.out.println("You vanquished all the villains using your tech, but the high stackholders of Stark "
+							+ "/n Industries voted you out of the CEO position so that they can continue weapon production.");
+					Runner.gameOff();
+				}
+				else if (findKeyword (statement, "ceo") >= 0)
+				{
+					System.out.print("The stakeholders were convinced that weapon production must end because of all the innocent people who get hurt, but"
+							+ "/n the villains still had your weapons and were able to destroy cities. You failed the people.");
+					Runner.gameOff();
+				}
+				else 
+				{
+					System.out.println("AYYYY Good job. You vanquished the enemies and stakeholders. Now everyone happy.");
+				}
 			}
-			else if (findKeyword(statement, "hulk") >= 0)
+			else if (findKeyword (statement, "captain") >= 0)
 			{
-				
-			}
-			else if (findKeyword(statement, "widow") >= 0)
-			{
-				
-			}
-			else if (findKeyword (statement, "america") >= 0)
-			{
-				
+				System.out.println("Ah you are Steven Rogers, the First Avenger because you were the Captain in WW2. Your tales keep your image alive, but there is a dilemma"
+						+ "/n your best friend Bucky is The Winter Soldier. He has slaughtered thousands to million people. He is the real weapon of mass destruction."
+						+ "/n You have him cornered and now you have a choice to kill him or try to help him.");
+				if (findKeyword (statement, "kill") >= 0)
+				{
+					System.out.println("You killed your best friend! Bruh, go on but if you're ready to kill your bestie you not a real friend.");
+				}
+				else 
+				{
+					System.out.println("You tried helping him, but he just ended up getting carbon frozen in Wakanda and created a civil war amongst the Avengers. Good job?");
+				}
 			}
 			else //Black Panther
 			{
-				
+				System.out.println("Ah the great kind T'Challa. Your father died from a mercenary being greedy for vibranium (the strongest metal in the universe, it absorbs "
+						+ "energy)."
+						+ "/n You must now avenge your father. Would you rather use your powers as the Black Panther or would you rather use your immense army?");
+				if (findKeyword (statement, "powers") >= 0)
+				{
+					System.out.println("You investigate and you found him. You killed your father's killer. Congrats.");
+				}
+				else
+				{
+					System.out.println("Your army ravages cities upon cities to find your father's killer. This creates a huge International dilemma, but you destroyed everything."
+							+ "/n Now you control the world with an iron fist and you then get assassinated by the rebellion. Sad, but you have a son to continue controlling the world.");
+					Runner.gameOff();
+				}
 			}
-		}
-		else
-		{
-			return;
 		}
 	}
 	public void leaveRoom(Person x)

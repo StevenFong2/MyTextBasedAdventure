@@ -1,3 +1,4 @@
+//Mamadou
 public class Thief extends Person {
 		private String[] inventory = {"Dagger", "Lockpick"};
 		public Thief(String firstName, String familyName, int x, int y, String[] inventory) {

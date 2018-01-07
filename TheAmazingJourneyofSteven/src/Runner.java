@@ -1,3 +1,4 @@
+// Saurabh Bansal, Mamadou Diallo, Steven Fond		AP Java Pd 2		Text Based Adventure
 import java.util.Scanner;
 
 public class Runner 
