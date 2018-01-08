@@ -16,10 +16,10 @@ public class LionRiddle extends Room {
 		x.sety(this.y);
 	
 		System.out.println("You enter a room that gives you an eerie feeling, the sound of the door behind you locking as you look around"
-				+ ". Unlike the rest of the rooms, this one is decorated \n "
+				+ ". Unlike the rest of the rooms, this one is decorated \n"
 				+ "with drawing of weapons. One image stands out in particular, a king being hung. "
-				+ "\n \n At the center of the room"
-				+ " you see a stone lion with a tablet beneath its paws. The the tablet reads:");
+				+ "\n \nAt the center of the room"
+				+ "you see a stone lion with a tablet beneath its paws. The the tablet reads:");
 		
 		//Challenge Started
 		int riddlevalue = R.nextInt(5) + 1;
@@ -76,11 +76,17 @@ public class LionRiddle extends Room {
 		if(UserAns == Answer)
 		{
 			Answered = true;
+			System.out.println("The stone lion lets out a roar, the sound of the door on the"
+					+ "other end of the room unlocking.");
 		}
-		while(Answered != true)
+		if(UserAns != Answer)
+		{
+			Answered = false;
+		}
+		while(Answered = false)
 		{
 			System.out.println("You feel yourself draw closer to death."
-					+ "Input the answer to the riddle and save yourself.");
+					+ "\nInput the answer to the riddle and save yourself.");
 			deathtime--;
 			if(deathtime == 0)
 			{
