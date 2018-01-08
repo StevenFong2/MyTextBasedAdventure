@@ -32,7 +32,7 @@ public class Runner
 		runningplayer = player1;
 		map.dungeon[0][0].enterRoom(player1);
 		//map.dungeon[0][1] = new LockedRoom(0,1);
-		//map.dungeon[1][0] = new LionRiddle(1,0);
+		map.dungeon[1][0] = new LionRiddle(1,0);
 		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here," + "\nbut something tells you that staying here won't end well for you.");
 		System.out.println("Where would you like to move? (Choose N, S, E, W)");
 		map.printMap();
