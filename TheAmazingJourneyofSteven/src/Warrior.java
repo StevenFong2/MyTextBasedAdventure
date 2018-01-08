@@ -1,8 +1,8 @@
 //Mamadou
 public class Warrior extends Person {
-	private String[] inventory = {"Longsword", "Health Potion"};
-	public Warrior(String firstName, String familyName, int x, int y, String[] inventory) {
-	super(firstName, familyName, x, y, inventory);
+	private Item[] inventory;
+	public Warrior(String Name, int x, int y, Item[] inventory) {
+	super(Name, x, y, inventory);
 	//Please Work
 	this.health = 30;
 	this.attack = 19;
@@ -12,10 +12,10 @@ public class Warrior extends Person {
 	this.speed = 12;
 	this.setInventory(inventory);
 }
-public String[] getInventory() {
+public Item[] getInventory() {
 	return inventory;
 }
-public void setInventory(String[] inventory) {
+public void setInventory(Item[] inventory) {
 	this.inventory = inventory;
 }
 

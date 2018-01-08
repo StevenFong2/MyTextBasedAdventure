@@ -3,7 +3,7 @@ public class Person
 {
 	String Name;
 	int x, y;
-	String[] inventory;
+	Item[] inventory;
 	int health;
 	int attack;
 	int defense;
@@ -36,7 +36,17 @@ public class Person
 		return this.y;	
 	}
 	
-	public Person (String Name, String familyName, int x, int y, String[] inventory)
+	public void setHealth(int health)
+	{
+		this.health = health;
+	}
+	
+	public int getHealth()
+	{
+		return this.health;
+	}
+	
+	public Person (String Name, int x, int y, Item[] inventory)
 	{
 		this.Name = Name;
 		this.x = x;

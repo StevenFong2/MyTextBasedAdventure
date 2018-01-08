@@ -8,19 +8,6 @@ public class Board
 	public Board (int row, int column)
 	{
 		this.dungeon = new Room[row][column];
-		//Room[][] dungeon = new Room[row][column];
-		//int a = 0;
-		//int b = 0;
-		/*for (Room[] i : dungeon)
-		{
-			for (Room j : i)
-			{
-				j = new Room(a,b);
-				b++;
-			}
-			a++;
-		}*/
-		// I still need to finish this and add more rooms because as of right now the GAME IS MADDDD HARD TO BEAT!!
 		for (int i = 0; i < dungeon.length; i++)
 		{
 			for (int j = 0; j < dungeon[i].length; j++)
@@ -56,6 +43,7 @@ public class Board
 			}
 		}
 		dungeon[0][0] = new Room(0,0);
+		dungeon[row - 1][column - 1] = new WinningRoom(row - 1, column - 1);
 		
 	}
 	

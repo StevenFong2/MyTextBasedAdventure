@@ -20,7 +20,7 @@ public class LockedRoom extends Room
 		int numKey = 1;
 		for(int i = 0; i < occupant.inventory.length; i++)
 		{
-			if (p.inventory[i].equals("Key"))
+			if (p.inventory[i] instanceof Magickey)
 			{
 				numKey++;
 			}
@@ -28,7 +28,7 @@ public class LockedRoom extends Room
 		
 		Scanner in = new Scanner(System.in);
 		String command = in.nextLine().toLowerCase().trim();
-		while (!command.equals("use key"))
+		while (!command.equals("/usekey"))
 		{
 			if (numKey == 0)
 			{
@@ -47,9 +47,9 @@ public class LockedRoom extends Room
 				command = in.nextLine().toLowerCase().trim();
 			}
 		}
-		if (command.equals("use key"))
+		if (command.equals("/usekey"))
 		{
-			System.out.println("All the doors are now unlocked.");
+			System.out.println("All doors are now unlocked.");
 		}
 		in.close();
 	}

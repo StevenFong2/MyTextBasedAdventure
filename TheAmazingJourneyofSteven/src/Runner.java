@@ -6,21 +6,14 @@ public class Runner
 	private static String Name;
 	private static boolean gameOn = true;
 	private static boolean pregame = true;
+	static Board runningmap;
+	static Person runningplayer;
 	
 	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
-		//Used to reference the current room you are currently in
-		/*building[0][1] = new LockedRoom(0,1);
-		building[1][2] = new PoisonRoom(1,2);
-		building[0][2] = new DeathRoom(0,2);
-		building[4][2] = new LionRiddle(4,2);
-	
-		//create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x,y);*/
 		Board map = new Board(5,5);
+		runningmap = map;
 		while (pregame)
 		{
 			System.out.println("This is where the introduction of the game goes and the explanation of all the rules which I am not too sure of what if is yet.");
@@ -30,23 +23,21 @@ public class Runner
 			
 			pregame = false;
 		}
-		String[] startinginventory = new String[10];
+		Item[] startinginventory = new Item[10];
 		for (int i = 0; i < 10; i++)
 		{
-			startinginventory[i] = "";
+			startinginventory[i] = null;
 		}
-		Person player1 = new Person(Name, Name, 0, 0, startinginventory);
+		Person player1 = new Person(Name, 0, 0, startinginventory);
+		runningplayer = player1;
 		map.dungeon[0][0].enterRoom(player1);
-		map.dungeon[0][1] = new LockedRoom(0,1);
-		map.dungeon[1][0] = new LionRiddle(1,0);
-		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
+		//map.dungeon[0][1] = new LockedRoom(0,1);
+		//map.dungeon[1][0] = new LionRiddle(1,0);
+		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here," + "\nbut something tells you that staying here won't end well for you.");
 		System.out.println("Where would you like to move? (Choose N, S, E, W)");
 		map.printMap();
 		while (gameOn)
 		{
-			/*System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here, but something tells you that staying here won't end well for you.");
-			System.out.println("Where would you like to move? (Choose N, S, E, W)");
-			map.printMap();*/
 			String move = in.nextLine();
 
 			if (validMove(move, player1, map.getmap()) == true)
