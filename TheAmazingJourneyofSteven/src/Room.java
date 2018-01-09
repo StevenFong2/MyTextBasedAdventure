@@ -4,6 +4,7 @@ public class Room
 	Person occupant;
 	int x , y;
 	boolean explored = false;
+	boolean locked = false;
 	
 	public Room(int x, int y)
 	{
@@ -42,4 +43,9 @@ public class Room
 			System.out.print("[R]");
 		}
 	}
+	
+	/*public boolean locked()
+	{
+		return locked;
+	}*/
 }

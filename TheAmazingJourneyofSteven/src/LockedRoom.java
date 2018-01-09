@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class LockedRoom extends Room
 {
-	private boolean explored = false;
+	boolean explored = false;
+	boolean locked = true;
 	public LockedRoom(int x, int y)
 	{
 		super(x, y);
@@ -71,4 +72,5 @@ public class LockedRoom extends Room
 			System.out.print("[L]");
 		}
 	}
+	
 }

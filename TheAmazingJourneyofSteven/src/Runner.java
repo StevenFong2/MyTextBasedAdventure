@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Runner 
 {
+	//The private variables are useful only in the runner
+	//The non private variables are replicas of the created object,
+	//They are not private because I needed to call the 
+	//current running map and the current running player for the Item interface.
 	private static String Name;
 	private static boolean gameOn = true;
 	private static boolean pregame = true;
@@ -11,28 +15,35 @@ public class Runner
 	
 	public static void main(String[] args)
 	{
+		//Sets up the Scanner for the inputs as well as the creating of a map.
 		Scanner in = new Scanner(System.in);
 		Board map = new Board(5,5);
 		runningmap = map;
+		
+		//This is the pre-game, where it explains everything about the game before we begin
+		//It is also where we set up the player name.
 		while (pregame)
 		{
 			System.out.println("This is where the introduction of the game goes and the explanation of all the rules which I am not too sure of what if is yet.");
-			System.out.println("Please eneter your full name with a space between your first and last, if you have a middle, name too bad,");
+			System.out.println("Please eneter your full name");
 			String name = in.nextLine();
+			System.out.println(name + "?" + "Really? That's so basic... well whatever..");
 			System.out.println("Welcome to the game " + name);
 			
 			pregame = false;
 		}
+		
+		//This is the creation and the set up for the player.
 		Item[] startinginventory = new Item[10];
 		for (int i = 0; i < 10; i++)
 		{
 			startinginventory[i] = null;
 		}
-		Person player1 = new Person(Name, 0, 0, startinginventory);
-		runningplayer = player1;
-		map.dungeon[0][0].enterRoom(player1);
+		Person player = new Person(Name, 0, 0, startinginventory);
+		runningplayer = player;
+		runningmap.dungeon[0][0].enterRoom(runningplayer);
 		//map.dungeon[0][1] = new LockedRoom(0,1);
-		map.dungeon[1][0] = new LionRiddle(1,0);
+		runningmap.dungeon[1][0] = new LionRiddle(1,0);
 		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here," + "\nbut something tells you that staying here won't end well for you.");
 		System.out.println("Where would you like to move? (Choose N, S, E, W)");
 		map.printMap();
@@ -40,10 +51,10 @@ public class Runner
 		{
 			String move = in.nextLine();
 
-			if (validMove(move, player1, map.getmap()) == true)
+			if (validMove(move, runningplayer, runningmap.getmap()) == true)
 
 			{
-				System.out.println("Your coordinates: row = " + player1.getx() + " col = " + player1.gety());
+				System.out.println("Your coordinates: row = " + runningplayer.getx() + " col = " + runningplayer.gety());
 				map.printMap();
 			}
 			
@@ -62,7 +73,7 @@ public class Runner
 			switch (move)
 			{
 			case "n":
-				if (p.getx() > 0)
+				if (p.getx() > 0 && runningmap.dungeon[p.getx()][p.gety()].locked == false)
 				{
 					map[p.getx()][p.gety()].leaveRoom(p);
 					map[p.getx() - 1][p.gety()].enterRoom(p);
@@ -74,7 +85,7 @@ public class Runner
 				}
 			
 			case "e":
-				if (p.gety() < map[p.getx()].length - 1)
+				if (p.gety() < map[p.getx()].length - 1 && runningmap.dungeon[p.getx()][p.gety()].locked == false)
 				{
 					map[p.getx()][p.gety()].leaveRoom(p);
 					map[p.getx()][p.gety() + 1].enterRoom(p);
@@ -86,7 +97,7 @@ public class Runner
 				}
 			
 			case "s":
-				if (p.getx() < map.length - 1)
+				if (p.getx() < map.length - 1 && runningmap.dungeon[p.getx()][p.gety()].locked == false)
 				{
 					map[p.getx()][p.gety()].leaveRoom(p);
 					map[p.getx() + 1][p.gety()].enterRoom(p);
@@ -97,7 +108,7 @@ public class Runner
 					return false;
 				}
 			case "w":
-				if (p.gety() > 0)
+				if (p.gety() > 0 && runningmap.dungeon[p.getx()][p.gety()].locked == false)
 				{
 					map[p.getx()][p.gety()].leaveRoom(p);
 					map[p.getx()][p.gety() - 1].enterRoom(p);
