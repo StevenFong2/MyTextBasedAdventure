@@ -10,6 +10,8 @@ public class Magickey implements Item
 	
 	public void effect()
 	{
-		//This does not really have an effect, but I mean it opens doors... do not yet know how to implement.
+		int x = Runner.runningplayer.getx();
+		int y = Runner.runningplayer.gety();
+		Runner.runningmap.dungeon[x][y].locked = false;
 	}
 }
