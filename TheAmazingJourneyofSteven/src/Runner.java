@@ -16,8 +16,13 @@ public class Runner
 		runningmap = map;
 		while (pregame)
 		{
-			System.out.println("This is where the introduction of the game goes and the explanation of all the rules which I am not too sure of what if is yet.");
-			System.out.println("Please eneter your full name with a space between your first and last, if you have a middle, name too bad,");
+			System.out.println("The Dungeon of Steven. Locked away for countless years, the\n"
+					+ "dungeon was the goal of countless adventurers, all who entered with\n"
+					+ "great ambitions but never left. With time, warriors stopped trying to clear\n"
+					+ "the dungeon that had killed so many already. It was unbeatable. The end goal\n"
+					+ "unacheivable. The challenges unfathomable. Until now that is...");
+			System.out.println("Please enter your full name with a space between your first and last, \n"
+					+ "if you have a middle, name too bad.");
 			String name = in.nextLine();
 			System.out.println("Welcome to the game " + name);
 			
