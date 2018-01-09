@@ -11,6 +11,7 @@ public class PoisonRoom extends Room
 		occupant = x;
 		x.setx(this.x);
 		x.sety(this.y);
+		this.explored = true;
 		System.out.println("As you walk into the room, you hear the door behind you slamming shut. A gas begins to fill the room from small slits"
 				+ " in the walls.");
 	}

@@ -12,6 +12,6 @@ public class Magickey implements Item
 	{
 		int x = Runner.runningplayer.getx();
 		int y = Runner.runningplayer.gety();
-		Runner.runningmap.dungeon[x][y].locked = false;
+		Runner.runningmap.dungeon[x][y].setlocked(false);
 	}
 }

@@ -18,19 +18,25 @@ public class LockedRoom extends Room
 		occupant = p;
 		p.setx(this.x);
 		p.sety(this.y);
-		int numKey = 1;
+		this.explored = true;
+		int numKey = 0;
+		int pos = 0;
 		for(int i = 0; i < occupant.inventory.length; i++)
 		{
 			if (p.inventory[i] instanceof Magickey)
 			{
 				numKey++;
+				pos = i;
 			}
 		}
 		
 		Scanner in = new Scanner(System.in);
-		String command = in.nextLine().toLowerCase().trim();
-		while (!command.equals("/usekey"))
+		//String command = in.nextLine().toLowerCase().trim();
+		//int xe = Runner.runningplayer.getx();
+		//int ye = Runner.runningplayer.gety();
+		while (Runner.runningmap.dungeon[this.x][this.y].getlocked() == true)
 		{
+			String command = in.nextLine().toLowerCase().trim();
 			if (numKey == 0)
 			{
 				System.out.println("You tried opening the door with force but it did not budge.");
@@ -41,16 +47,17 @@ public class LockedRoom extends Room
 				Runner.gameOff();
 				break;
 			}
-			else if (numKey > 0)
+			else if (numKey > 0 && command.equals("/usekey"))
 			{
-				System.out.println("You tried opening the door with force but it did not budge.");
-				System.out.println("If only I have a key...");
-				command = in.nextLine().toLowerCase().trim();
+					occupant.inventory[pos].effect();
+					System.out.println("All doors are now unlocked.");
 			}
-		}
-		if (command.equals("/usekey"))
-		{
-			System.out.println("All doors are now unlocked.");
+			else if (numKey > 0 && !command.equals("/usekey"))
+			{
+					System.out.println("You tried opening the door with force but it did not budge.");
+					System.out.println("If only I have a key...");
+			}
+
 		}
 		in.close();
 	}
@@ -71,6 +78,16 @@ public class LockedRoom extends Room
 		{
 			System.out.print("[L]");
 		}
+	}
+	
+	public void setlocked(boolean s)
+	{
+		this.locked = s;
+	}
+	
+	public boolean getlocked()
+	{
+		return this.locked;
 	}
 	
 }

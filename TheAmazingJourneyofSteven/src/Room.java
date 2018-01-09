@@ -44,8 +44,13 @@ public class Room
 		}
 	}
 	
-	/*public boolean locked()
+	public void setlocked(boolean s)
 	{
-		return locked;
-	}*/
+		this.locked = s;
+	}
+	
+	public boolean getlocked()
+	{
+		return this.locked;
+	}
 }

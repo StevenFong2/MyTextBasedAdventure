@@ -16,6 +16,7 @@ public class MarvelvDC extends Room
 		occupant = x;
 		x.setx(this.x);
 		x.sety(this.y);
+		this.explored = true;
 		
 		System.out.println("AH the fantastic world of Comics. An infinite universe ");
 		System.out.println("Play this game you must. Choose a universe you must. DC or Marvel. "

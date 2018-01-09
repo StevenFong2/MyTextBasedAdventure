@@ -17,6 +17,7 @@ public class StarWars extends Room
 		occupant = x;
 		x.setx(this.x);
 		x.sety(this.y);
+		this.explored = true;
 		System.out.println("Entered the Stars Wars room, you have!");
 		System.out.println("Play the Game you must. CHOOSE YOUR LIGHTSABER.");
 		System.out.println("(Choose Lightsaber you must.)");

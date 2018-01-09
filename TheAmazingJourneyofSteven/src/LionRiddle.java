@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class LionRiddle extends Room {
 
 	
-	private boolean explored = false;
 	public LionRiddle(int x, int y) {
 		super(x, y);
 	}
@@ -14,6 +13,7 @@ public class LionRiddle extends Room {
 		occupant = x;
 		x.setx(this.x);
 		x.sety(this.y);
+		this.explored = true;
 	
 		System.out.println("You enter a room that gives you an eerie feeling, the sound"
 				+ "\nof the door behind you locking as you look around"
@@ -99,6 +99,7 @@ public class LionRiddle extends Room {
 						+ "\n'Tragic...I thought you were worthy', it says as it bites down on your"
 						+ "\nhead, killing you.");
 				Runner.gameOff();
+				in.close();
 			}
 		}
 		
