@@ -21,7 +21,7 @@ public class LockedRoom extends Room
 		this.explored = true;
 		int numKey = 0;
 		int pos = 0;
-		for(int i = 0; i < occupant.inventory.length; i++)
+		for(int i = 0; i < occupant.getInventory().length; i++)
 		{
 			if (p.inventory[i] instanceof Magickey)
 			{
@@ -30,10 +30,7 @@ public class LockedRoom extends Room
 			}
 		}
 		
-		//String command = in.nextLine().toLowerCase().trim();
-		//int xe = Runner.runningplayer.getx();
-		//int ye = Runner.runningplayer.gety();
-		while (Runner.runningmap.dungeon[this.x][this.y].getlocked() == true)
+		while (Runner.runningmap.getdungeon()[this.x][this.y].getlocked() == true)
 		{
 			String command = Runner.in.nextLine().toLowerCase().trim();
 			if (numKey == 0)
@@ -48,8 +45,9 @@ public class LockedRoom extends Room
 			}
 			else if (numKey > 0 && command.equals("/usekey"))
 			{
-					occupant.inventory[pos].effect();
+					occupant.getInventory()[pos].effect();
 					System.out.println("All doors are now unlocked.");
+					occupant.getInventory()[pos] = new Placeholder();
 			}
 			else if (numKey > 0 && !command.equals("/usekey"))
 			{

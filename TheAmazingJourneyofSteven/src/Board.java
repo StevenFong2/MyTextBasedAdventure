@@ -1,10 +1,9 @@
 //Steven, Saurabh, Mamadou
 import java.util.Random;
-
 public class Board 
 {
-	Room[][] dungeon;
-	Random r = new Random();
+	private Room[][] dungeon;
+	private Random r = new Random();
 	public Board (int row, int column)
 	{
 		this.dungeon = new Room[row][column];
@@ -42,9 +41,16 @@ public class Board
 				}
 			}
 		}
+		//To ensure there is only on winning room.
+		//To ensure the room the player enters first is not some crazy stuff.
 		dungeon[0][0] = new Room(0,0);
 		dungeon[row - 1][column - 1] = new WinningRoom(row - 1, column - 1);
 		
+	}
+	
+	public Room[][] getdungeon()
+	{
+		return this.dungeon;
 	}
 	
 	public void printMap()

@@ -4,6 +4,10 @@ public class Person
 	String Name;
 	int x, y;
 	Item[] inventory;
+	//Variables below are not in parameter for constructor,
+	//If we add these to the parameters of the constructor Person,
+	//We have to manually add the specific stats to each
+	//character class(magician, thief, warrior) in the runner.
 	int health;
 	int attack;
 	int defense;
@@ -44,6 +48,11 @@ public class Person
 	public int getHealth()
 	{
 		return this.health;
+	}
+	
+	public Item[] getInventory()
+	{
+		return this.inventory;
 	}
 	
 	public Person (String Name, int x, int y, Item[] inventory)

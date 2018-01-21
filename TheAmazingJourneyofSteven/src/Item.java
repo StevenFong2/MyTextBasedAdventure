@@ -1,4 +1,4 @@
-
+// Steven Fong
 public interface Item 
 {
 	public abstract String description();

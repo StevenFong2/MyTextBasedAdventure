@@ -1,4 +1,4 @@
-
+//Steven Fong
 public class Magickey implements Item
 {
 	public Magickey() {}
@@ -12,6 +12,6 @@ public class Magickey implements Item
 	{
 		int x = Runner.runningplayer.getx();
 		int y = Runner.runningplayer.gety();
-		Runner.runningmap.dungeon[x][y].setlocked(false);
+		Runner.runningmap.getdungeon()[x][y].setlocked(false);
 	}
 }
