@@ -1,12 +1,15 @@
 //Mamadou
-public class Magician extends Person {
-		public Magician(String Name, int x, int y, Item[] inventory) {
+public class Magician extends Person
+{
+	public Magician(String Name, int x, int y, Item[] inventory) 
+	{
 		super(Name, x, y, inventory);
-		this.health = 25;
-		this.attack = 10;
-		this.defense = 20;
-		this.magic = 35;
-		this.resistance = 18;
-		this.speed = 20;
-		}
+		//setting up the specific stats for each job;
+		setHealth(25);
+		setAttack(10);
+		setDefense(20);
+		setMagic(35);
+		setResistance(18);
+		setSpeed(20);
+	}
 }

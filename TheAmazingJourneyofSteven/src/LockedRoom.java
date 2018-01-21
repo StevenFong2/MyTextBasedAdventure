@@ -23,7 +23,7 @@ public class LockedRoom extends Room
 		int pos = 0;
 		for(int i = 0; i < occupant.getInventory().length; i++)
 		{
-			if (p.inventory[i] instanceof Magickey)
+			if (occupant.getInventory()[i] instanceof Magickey)
 			{
 				numKey++;
 				pos = i;

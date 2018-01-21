@@ -10,6 +10,10 @@ public class Runner
 	private static boolean gameOn = true;
 	public static Board runningmap;
 	public static Person runningplayer;
+	//Every class will use same scanner
+	//somehow creating another scanner in another
+	//class makes a noelementexception error for the scanner,
+	//this gets rid of it.
 	public static Scanner in = new Scanner(System.in);
 	
 	public static void main(String[] args)
@@ -37,10 +41,15 @@ public class Runner
 		{
 			startinginventory[i] = new Placeholder();
 		}
+		
+		//testing code
 		startinginventory[0] = new Magickey();
+		
 		runningplayer = new Person(name, 0, 0, startinginventory);
+		
 		//testing code
 		runningmap.getdungeon()[0][1] = new LockedRoom(0,1);
+		//testing code
 		runningmap.getdungeon()[1][0] = new LionRiddle(1,0);
 		
 		System.out.println("You wake up in a dirty, worn down room. You don't remember much about yourself or why you are here," + "\nbut something tells you that staying here won't end well for you.");
