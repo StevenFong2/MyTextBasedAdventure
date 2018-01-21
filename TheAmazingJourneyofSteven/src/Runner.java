@@ -12,12 +12,12 @@ public class Runner
 	private static boolean pregame = true;
 	static Board runningmap;
 	static Person runningplayer;
+	static Scanner in = new Scanner(System.in);
 	//static String currentmove;
 	
 	public static void main(String[] args)
 	{
 		//Sets up board
-		Scanner in = new Scanner(System.in);
 		Board map = new Board(5,5);
 		runningmap = map;
 		
@@ -70,7 +70,6 @@ public class Runner
 			{
 				System.out.println("Choose a valid move");
 			}
-			 move = in.nextLine().toLowerCase().trim();
 		}
 		in.close();
 	}

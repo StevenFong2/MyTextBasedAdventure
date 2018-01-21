@@ -30,13 +30,12 @@ public class LockedRoom extends Room
 			}
 		}
 		
-		Scanner in = new Scanner(System.in);
 		//String command = in.nextLine().toLowerCase().trim();
 		//int xe = Runner.runningplayer.getx();
 		//int ye = Runner.runningplayer.gety();
 		while (Runner.runningmap.dungeon[this.x][this.y].getlocked() == true)
 		{
-			String command = in.nextLine().toLowerCase().trim();
+			String command = Runner.in.nextLine().toLowerCase().trim();
 			if (numKey == 0)
 			{
 				System.out.println("You tried opening the door with force but it did not budge.");
@@ -59,7 +58,6 @@ public class LockedRoom extends Room
 			}
 
 		}
-		in.close();
 	}
 	
 	public void print()
