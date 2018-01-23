@@ -1,4 +1,4 @@
-//Steven Fong
+//Steven, Saurabh, Mamadou
 public class Magickey implements Item
 {
 	public Magickey() {}

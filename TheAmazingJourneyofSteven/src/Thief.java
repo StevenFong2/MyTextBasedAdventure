@@ -1,4 +1,4 @@
-//Mamadou
+//Steven, Saurabh, Mamadou
 public class Thief extends Person
 {
 	public Thief(String Name, int x, int y, Item[] inventory) 

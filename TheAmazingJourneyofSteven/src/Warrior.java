@@ -1,4 +1,4 @@
-//Mamadou
+//Steven, Saurabh, Mamadou
 public class Warrior extends Person
 {
 	public Warrior(String Name, int x, int y, Item[] inventory)

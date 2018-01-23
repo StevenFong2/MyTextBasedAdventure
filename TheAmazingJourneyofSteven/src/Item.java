@@ -1,4 +1,4 @@
-// Steven Fong
+//Steven, Saurabh, Mamadou
 public interface Item 
 {
 	public abstract String description();

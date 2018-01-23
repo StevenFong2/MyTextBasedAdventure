@@ -1,4 +1,4 @@
-//Saurabh Bansal
+//Steven, Saurabh, Mamadou
 import java.util.Scanner;
 
 public class StarWars extends Room

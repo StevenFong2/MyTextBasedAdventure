@@ -1,4 +1,4 @@
-//Mamadou
+//Steven, Saurabh, Mamadou
 import java.util.Random;
 import java.util.Scanner;
 public class LionRiddle extends Room {

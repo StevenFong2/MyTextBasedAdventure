@@ -1,4 +1,4 @@
-//Saurabh, Steven
+//Steven, Saurabh, Mamadou
 public class Room 
 {
 	Person occupant;

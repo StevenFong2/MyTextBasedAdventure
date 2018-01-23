@@ -1,4 +1,4 @@
-//Steven
+//Steven, Saurabh, Mamadou
 import java.util.Scanner;
 
 public class LockedRoom extends Room
